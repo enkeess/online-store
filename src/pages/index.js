@@ -7,4 +7,3 @@ export {
 	LoginPage,
 	RegistrationPage
 }
-

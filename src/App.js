@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, LoginPage, RegistrationPage } from '@/pages';
@@ -13,15 +12,13 @@ const App = () => {
     <Routes>
 		<Route path={routes.HOME} element={<HomePage/>}  exact/>
 		<Route path={routes.LOGIN} element={<LoginPage/>} exact/> 
-
 		<Route path={routes.REGISTRATION} element={<RegistrationPage/>} exact/>
-		<Route path={routes.PROFILE} element={<LoginPage/>}/>
 		
-		{/* <Route path={routes.ANY} element={
+		<Route path={routes.ANY} element={
 			<Layout>
 				Page Not Found
 			</Layout>
-		}/> */}
+		}/>
 	</Routes>
   );
 }
