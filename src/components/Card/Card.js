@@ -109,13 +109,14 @@ export const Card = (props) => {
 	return(
 		<CardBase>
 			<Checkbox 
-				sx={{backgroundColor: colors.bottonBg}}
+				sx={{backgroundColor: colors.buttonBg}}
 				color='info'
 				className='iconRight icon'
 				checkedIcon={<FavoriteIcon color='error'/>}
 				icon={<FavoriteBorderIcon color='info'/>}
 			/>
 
+			
 			<Avatar className='iconLeft icon bg-none'>
 				<LocalFireDepartmentIcon color='primary'/>
 			</Avatar>

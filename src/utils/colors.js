@@ -17,7 +17,7 @@ export const colors = {
 	success: base.success,
 	info: base.blueLilac,
 	error: base.redOrangeCrayola,
-	bottonBg: base.whiteGhost,
+	buttonBg: base.whiteGhost,
 	cardBg: '#F4F4FF', 
 	textDark: '#535353',
 	textGray: '#ABABAB',

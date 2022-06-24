@@ -8,5 +8,5 @@ export const Flex = styled.div`
 	gap: ${props => props.gap ?? '0'};
 	column-gap: ${props => props.cgap ?? '0'};
 	row-gap: ${props => props.rgap ?? '0'};
-	margin-top: ${props => props.mt ?? '0'}
+	margin-top: ${props => props.mt ?? '0'};
 `

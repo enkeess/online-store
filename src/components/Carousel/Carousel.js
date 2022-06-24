@@ -88,12 +88,8 @@ export const Carousel = (props)  => {
 		
 	}
 
-	console.log(activePage);
-	console.log(maxPage);
-
 	return(
 		<CarouselBase ref={carouselRef}>
-
 			<Viewbox>
 				<Content width={width} activePage={activePage}>
 					{getPages()}

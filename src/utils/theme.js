@@ -8,12 +8,18 @@ export const theme = createTheme({
     primary: {
       main: colors.primary,
     },
+
     success: {
       main: colors.success
     },
+
 	info: {
 		main: colors.info
 	}, 
+
+	infoLight: {
+		main: colors.buttonBg
+	},
 
 	error: {
 		main: colors.error
@@ -85,10 +91,34 @@ export const theme = createTheme({
 		lineHeight: '22px',
 	},
 
+	tableTitle: {
+		fontWeight: 700,
+		fontSize: '22px',
+		lineHeight: '26px',
+	},
+
+	tablePrice: {
+		fontWeight: 700,
+		fontSize: '23px',
+		lineHeight: '27px',
+	},
+
+	counter: {
+		fontWeight: 400,
+		fontSize: '24px',
+		lineHeight: '28px',
+	},
+
 	footer : {
 		fontWeight: 400,
 		fontSize: '16px',
 		lineHeight: '19px'
+	},
+
+	totalPrice: {
+		fontWeight: 700,
+		fontSize: '35px',
+		lineHeight: '41px'
 	}
   },
 });

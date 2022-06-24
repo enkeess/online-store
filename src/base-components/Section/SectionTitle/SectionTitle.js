@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 
 const SectionTitleBase = styled.div`
-	padding: 20px;
+	padding-bottom: 20px;
 `
 
 export const SectionTitle = (props) => {

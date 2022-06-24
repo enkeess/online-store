@@ -5,3 +5,5 @@ export * from './Layout';
 export * from './Contacts';
 export * from './Form';
 
+export * from './Counter';
+
