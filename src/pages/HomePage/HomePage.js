@@ -2,7 +2,6 @@ import { Card }  from '@Components';
 
 import { Container, Section, SectionTitle } from '@BaseComponents';
 import { Carousel } from '@Components';
-import { withLayout } from '@/hoc';
 
 const content = [
 	<Card/>,
@@ -15,7 +14,7 @@ const content = [
 	<Card/>
 ]
 
-const HomePage = () => {
+export const HomePage = () => {
 	return(
 		<Container>
 			<Section>
@@ -36,4 +35,3 @@ const HomePage = () => {
 	)
 }
 
-export default withLayout(HomePage);

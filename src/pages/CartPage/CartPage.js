@@ -1,19 +1,13 @@
-import { withLayout } from '@Hoc';
-import {Container, Section, SectionTitle, Flex, StyledIconButton, UnderlidedTypography, StyledButton} from "@BaseComponents";
-import styled from "@emotion/styled";
-import {Button, Typography} from "@mui/material";
 
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
+import {Container, Section, SectionTitle, Flex,  UnderlidedTypography, StyledButton} from "@BaseComponents";
+
+import {Typography} from "@mui/material";
 
 import { colors, routes } from '@Utils';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { CartTable } from './CartTable';
 
-
-const CartPage = () => {
+export const CartPage = () => {
 	return(
 		<Container>
 			<Section>
@@ -51,9 +45,5 @@ const CartPage = () => {
 				</Flex>
 			</Section>
 		</Container>
-
 	)
 };
-
-
-export default withLayout(CartPage);

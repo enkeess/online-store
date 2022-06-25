@@ -1,3 +1,1 @@
-const { default: CartPage } = require('./CartPage')
-
-export default CartPage;
+export * from './CartPage';

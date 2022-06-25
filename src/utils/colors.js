@@ -24,7 +24,8 @@ export const colors = {
 	navbar: '#F4F1FF',
 	textNavbar: '#6C6C6C',
 	footer: '#413E70', 
-	placeholder: '#DADADA'
+	placeholder: '#DADADA',
+	pagination: '#C4C4C4'
 }
 
 

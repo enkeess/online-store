@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom';
 import { colors } from '@Utils'
 
 import { Container, Flex, UnderlidedTypography, Section, SectionTitle } from '@BaseComponents'
-import { withLayout } from '@Hoc';
 
 import { LoginForm } from './LoginForm';
 
 const LoginPageContainer = styled(Container)`
 	margin: 0 auto;
 	width: 615px;
-
 	padding: 90px 0 120px;
 `
 
-const LoginPage = () => {
+export const LoginPage = () => {
 	return(
 		<LoginPageContainer>
 			<Section>
@@ -40,7 +38,5 @@ const LoginPage = () => {
 				</Flex>			
 			</Section>
 		</LoginPageContainer>
-	)
-}
-
-export default withLayout(LoginPage);
+	);
+};

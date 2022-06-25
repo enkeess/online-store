@@ -1,0 +1,79 @@
+{
+	"categories": [
+		{
+			"name" : "Очки",
+			"icon" : "",
+			"category": "ochki",
+			"subcategories": [
+				{
+					"name": "Очки корригирующие",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Очки для работы за компьютером",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Очки солнцезащитные",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Очки для водителей",
+					"subcategories": []
+				}
+			]
+		}, {
+			"name" : "Одноразовая посуда",
+			"icon" : "",
+			"category": "odnorazovaya_posuda",
+			"subcategories": [
+				{
+					"name": "Cтаканы",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Тарелки",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Бумажные салфетки",
+					"subcategories": []
+				}
+			]
+		}, {
+			"name" : "Упаковка",
+			"icon" : "",
+			"category": "upakovka",
+			"subcategories": [
+				{
+					"name": "Пакеты подарочные",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Упаковочная бумага",
+					"category": "ochki",
+					"subcategories": []
+				}
+			]
+		}, {
+			"name" : "Товары для праздника",
+			"icon" : "",
+			"category": "tovary_dlya_prazdnika",
+			"subcategories": [
+				{
+					"name": "Колпачки",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Маски",
+					"category": "ochki",
+					"subcategories": []
+				}, {
+					"name": "Гирлянды",
+					"category": "ochki",
+					"subcategories": []
+				}
+			]
+		}
+	]
+}
