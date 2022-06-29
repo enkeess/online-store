@@ -46,7 +46,7 @@ const BaseIcon = styled.div`
 `
 
 export const CatalogListItem = (props) => {
-	const { name, category, subcategories, icon, active, ...rest } = props;
+	const { label, category, subcategories = [], icon, active, ...rest } = props;
 	return(
 		<CatalogListItemBase active={active} {...rest}>
 			{icon === "" && <CatalogListItemBaseIcon icon='start'>
@@ -57,7 +57,7 @@ export const CatalogListItem = (props) => {
 
 			<CatalogListItemText>
 				<Typography variant='h3'>
-					{name}
+					{label}
 				</Typography>
 			</CatalogListItemText>
 			
@@ -67,4 +67,3 @@ export const CatalogListItem = (props) => {
 		</CatalogListItemBase>
 	)
 }
-

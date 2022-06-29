@@ -31,15 +31,15 @@ export const CatalogList = ({categories}) => {
 			<CatalogListWrapper>
 				<CatalogListBase>
 					{ categories.map((item, i) => (
-						<Link to={`/catalog/${item.category}`}>
+						<Link to={`/catalog/${item.category}`} key={item.id}>
 							<CatalogListItem {...item} active={i === active} onMouseEnter={() => setActive(i)}/>
 						</Link>
 					))}
 				</CatalogListBase>
 
 				<CatalogListBase>
-					{ categories[active].subcategories.map(item => (
-						<Link to={`/catalog/${categories[active].category}/${item.category}`}>
+					{ categories[active]?.subcategories.map(item => (
+						<Link to={`/catalog/${categories[active].category}/${item.category}`} key={item.id}>
 							<CatalogListItem {...item} />
 						</Link>
 					))}
