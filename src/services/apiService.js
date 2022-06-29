@@ -11,4 +11,13 @@ export class ApiService {
 	static getCards =  (params) => {
 		return  ApiService.getRequest('/cards');
 	}
+
+
+	static getCategories = (params) => {
+		return ApiService.getRequest('/categories');
+	}
+
+	static getFilters = (params) => {
+		return ApiService.getRequest('/filters');
+	}
 }
