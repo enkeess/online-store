@@ -1,7 +1,7 @@
 
 import styled from '@emotion/styled';
 
-import src from '@/img/img_1.png';
+// import src from '@/img/img_1.png';
 
 import { Checkbox, Avatar, Rating, Typography } from "@mui/material";
 
@@ -105,7 +105,12 @@ const Price = styled.span`
 	color: ${colors.textDark};
 `
 
-export const Card = (props) => {
+export const Card = ({data}) => {
+
+	console.log(data);
+
+	const {id, label, rating, src, alt, price, oldPrice, rest} = data;
+
 	return(
 		<CardBase>
 			<Checkbox 
@@ -122,37 +127,35 @@ export const Card = (props) => {
 			</Avatar>
 
 			<ImgContainer>
-				<img src={src} alt={'alt'}/>
+				<img src={src} alt={alt}/>
 			</ImgContainer>
 
-			<Typography variant='h3' align='left'>
-				Кружка PrioritY "Гравити 
-				
-				Фолз, Disney / Дисней...
+			<Typography variant='h3' align='left' sx={{minHeight: '70px'}}>
+				{label}
 			</Typography>
 			
 
 			<Block>
 				<Typography variant='p' sx={{justifySelf: 'flex-start'}}>
-					В наличии: 15 шт
+					В наличии: {rest} шт
 				</Typography>
 
+				
 				<OldPrice>
-					4500 p.
+					{oldPrice && `${oldPrice} p.`}
 				</OldPrice>
 
 				<Rating 
 					size='large'
-					value={2} 
+					value={rating} 
 					readOnly
 					icon={<StarIcon color='primary' />}
 					emptyIcon={<StarIcon sx={{color: ' rgba(255, 169, 39, 0.4)'}}/>}
 				/>
 
 				<Price>
-					2500 р.
+					{price} р.
 				</Price>
-
 			</Block>
 
 			<StyledButton variant='contained' color='success' fullWidth>
