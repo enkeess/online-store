@@ -1,0 +1,288 @@
+{
+	"filters" : [
+		{
+			"id": "AbCTLBYHslgQ7Zt7Tq1vn",
+			"label": "Подарок для",
+			"isDropdown": true,
+			"type": "checkboxBlock",
+			"name": "presentFor",
+			"defaultValue": {},
+			"params": [
+				{
+					"id": "byK-BSh9poEtBk5JrTbYj",
+					"value": "baby",
+					"label": "Ребенка"
+				}, {
+					"id" : "NF5MKXnWlMrqoFyYcnZZi",
+					"value": "mother",
+					"label": "Мамы"
+				}, {
+					"id": "lUjvV7-2iql54we_Ls17l",
+					"value": "father",
+					"label": "Папы"
+				},  {
+					"id": "hmq5ozNvk93c7oa_D7JX0",
+					"value": "friend",
+					"label": "Друга / Подруги"
+				},  {
+					"id": "XWjR4O1Zuxb2q3VHwd2Sk",
+					"value": "colleague",
+					"label": "Коллеги"
+				}
+			]
+		}, {
+			"id": "OCjQ79RvhQiKoz-55W440",
+			"label": "Пол",
+			"isDropdown": false,
+			"type": "checkboxBlock",
+			"name": "sex",
+			"defaultValue": {},
+			"params": [
+				{
+					"id": "yEJITYoBWQRqbWpHUSFQ_",
+					"value": "male",
+					"label": "Мужской"
+				}, {
+					"id": "KsrLh_g0mZiqkfKoM1k4C",
+					"value": "female",
+					"label": "Женский"
+				}
+			]
+		}, {
+			"id": "EUBmJJcuuSgwldGWiP4W0",
+			"label": "Возраст",
+			"isDropdown": false,
+			"type": "slider",
+			"name": "age",
+			"defaultValue": {
+				"from" : 18,
+				"to" : 99
+			},
+			"params": [
+				{
+					"id": "2ccXwHMlH5slT45UPwBDy",
+					"value": "from",
+					"label": "от"
+				}, {
+					"id": "eGpa7CRS0k8kJbYa_1EtC",
+					"value": "to",
+					"label": "до"
+				}
+			]
+		}, {
+			"id": "jPNKSb3qPZ2LtuXKdHMAU",
+			"label": "Сроки доставки",
+			"isDropdown": false,
+			"name": "deliiveryTerms",
+			"type": "radio",
+			"defaultValue": "any",
+			"params": [
+				{
+					"id": "tduPYJY1nQ1OM0Rpo5CmA",
+					"value": "any",
+					"label": "Неважно"
+				}, {
+					"id": "W56Gcr_Q-9cBgtTHzmCWz",
+					"value": "today",
+					"label": "Сегодня"
+				}, {
+					"id": "bwz1BjfkUtn-VUJGGMbf6",
+					"value": "upToOneDay",
+					"label": "Сегодня или завтра"
+				}
+			]
+		}, {
+			"id": "ghc6S4eBs0dYOUrWlnNua",
+			"label": "Цена",
+			"isDropdown": true,
+			"type": "slider",
+			"name": "price",
+			"defaultValue": {
+				"from" : 499,
+				"to" : 14999
+			},
+			"params": [
+				{
+					"id": "QmiPPNtnF8bLgb-DSGnYV",
+					"value": "from",
+					"label": "от"
+				}, {
+					"id": "vMUOH9T5yh_IJ-7IBVmNv",
+					"value": "to",
+					"label": "до"
+				}
+			]
+		}
+	], 
+
+	"categories": [
+		{
+			"id": "I2CQikMQMX4mvJPCth-vj",
+			"label" : "Очки",
+			"icon" : "",
+			"category": "ochki",
+			"subcategories": [
+				{
+					"id": "lB-0AJS-v2plZcS2QmVQR",
+					"label": "Очки корригирующие",
+					"category": "ochki_korrigiryyuschie",
+					"subcategories": []
+				}, {
+					"id": "PpxC37KxLeRGvkSoN6K5q",
+					"label": "Очки для работы за компьютером",
+					"category": "ochki_dlya_rabory_za_kompyuterom",
+					"subcategories": []
+				}, {
+					"id": "iYMHQiEh5NAV6kUIltYNN",
+					"label": "Очки солнцезащитные",
+					"category": "ochki_solnctezaschitnye",
+					"subcategories": []
+				}, {
+					"id": "Xj-Z-JBQFbDlBFqpPrHJw",
+					"label": "Очки для водителей",
+					"category": "ochki_dlya_voditeley",
+					"subcategories": []
+				}
+			]
+		}, {
+			"id": "sVBnY3eIQOIh2H_BuPWoB",
+			"label" : "Одноразовая посуда",
+			"icon" : "620iJH-qA14amXYFnWs5A",
+			"category": "odnorazovaya_posuda",
+			"subcategories": [
+				{
+					"id": "odNZHwOO8LThVD6OQlwBz",
+					"label": "Cтаканы",
+					"category": "stakany",
+					"subcategories": []
+				}, {
+					"id": "gniUEOvEGjq9eBQ76Cp__",
+					"label": "Тарелки",
+					"category": "tarelky",
+					"subcategories": []
+				}, {
+					"id": "BuJyDJ0LcxXFliNeDFxhV",
+					"label": "Бумажные салфетки",
+					"category": "bumaghnye_salfetki",
+					"subcategories": []
+				}
+			]
+		}, {
+			"id": "FK1HF_MymBdnB3iO3HdFW",
+			"label" : "Упаковка",
+			"icon" : "",
+			"category": "upakovka",
+			"subcategories": [
+				{
+					"id": "6uLvlhX5sq4xx0sk47HlU",
+					"label": "Пакеты подарочные",
+					"category": "paketi_podarochnye",
+					"subcategories": []
+				}, {
+					"id": "54FmAb4l8q7fURZce19FW",
+					"label": "Упаковочная бумага",
+					"category": "upakovochnaya_bumaga",
+					"subcategories": []
+				}
+			]
+		}, {
+			"id": "AagCRYwbVNZjyd8O_oN3n",
+			"label" : "Товары для праздника",
+			"icon" : "",
+			"category": "tovary_dlya_prazdnika",
+			"subcategories": [
+				{
+					"id": "rQcZE11d8WHey30CsndYw",
+					"label": "Колпачки",
+					"category": "kolpachki",
+					"subcategories": []
+				}, {
+					"id": "_b0rXQ3E5vV9bAC4GMFns",
+					"label": "Маски",
+					"category": "maski",
+					"subcategories": []
+				}, {
+					"id": "YKhXAzGBmQJXNAhtAsfIL",
+					"label": "Гирлянды",
+					"category": "girlyandy",
+					"subcategories": []
+				}
+			]
+		}
+	], 
+
+	"cards" : [
+		{
+			"id": "hrr9DbIzMWG2UKhvqsmVZ",
+			"label": "Набор наклеек-тату переводных PrioritY...",
+			"rating": 3,
+			"price": 2500,
+			"oldPrice": null,
+			"isHot": true,
+			"src": "img/img_1.png",
+			"alt": "Набор наклеек-тату переводных",
+			"rest": 15,
+			"category": [
+				"tovary_dlya_prazdnika"
+			],
+			"age": {
+				"from": 1,
+				"to": 99
+			}
+		}, {
+			"id": "1ADWcDwM1LdOAZ_pNhegH",
+			"label": "Кружка PrioritY \"Paw Patrol / Щенячий патруль\"...",
+			"rating": 4,
+			"price": 2500,
+			"oldPrice": 3600,
+			"isHot": true,
+			"src": "img/img_2.png",
+			"alt": "Кружка Щенячий патруль",
+			"rest": 15,
+			"category": [
+				"tovary_dlya_prazdnika"
+			],
+			"age": {
+				"from": 1,
+				"to": 99
+			}
+		}, {
+			"id": "V6_twr6m3WJA-IkDiA7Xx",
+			"label": "Набор детской посуды Priority / Три Кота \"Бабочки\"",
+			"rating": 4,
+			"price": 2500,
+			"oldPrice": null,
+			"isHot": true,
+			"src": "img/img_3.png",
+			"alt": "Набор детской посуды Три Кота",
+			"rest": 15,
+			"category": [
+				"tovary_dlya_prazdnika"
+			],
+			"age": {
+				"from": 1,
+				"to": 99
+			}
+		}, {
+			"id": "3B-Mv8_tt1jX2qo8R9ckJ",
+			"label": "Кружка PrioritY \"Гравити Фолз\", Disney / Дисней...",
+			"rating": 4,
+			"price": 2500,
+			"oldPrice": 4500,
+			"isHot": true,
+			"src": "img/img_4.png",
+			"alt": "Кружка Гравити Фолз",
+			"rest": 15,
+			"category": [
+				"tovary_dlya_prazdnika"
+			],
+			"age": {
+				"from": 1,
+				"to": 99
+			}
+		}
+		
+	]
+}
+
+	
