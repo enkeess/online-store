@@ -120,6 +120,13 @@ export const theme = createTheme({
 		fontWeight: 700,
 		fontSize: '35px',
 		lineHeight: '41px'
+	},
+
+	filter: {
+		fontWeight: 700,
+		fontSize: '25px',
+		lineHeight: '29px',
+		color: colors.textDark	
 	}
   },
 });

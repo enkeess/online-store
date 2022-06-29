@@ -1,0 +1,56 @@
+{
+	"filters" : [
+		{
+			"label": "Пол",
+			"isDropdown": false,
+			"type": "checkboxBlock",
+			"name": "sex",
+			"defaultValue": {},
+			"params": [
+				{
+					"value": "male",
+					"label": "Мужской"
+				}, {
+					"value": "female",
+					"label": "Женский"
+				}
+			]
+		}, {
+			"label": "Сроки доставки",
+			"isDropdown": false,
+			"name": "deliiveryTerms",
+			"type": "radio",
+			"defaultValue": "any",
+			"params": [
+				{
+					"value": "any",
+					"label": "Неважно"
+				}, {
+					"value": "today",
+					"label": "Сегодня"
+				}, {
+					"value": "upToOneDay",
+					"label": "Сегодня или завтра"
+				}
+			]
+		}, {
+			"label": "Цена",
+			"isDropdown": true,
+			"type": "slider",
+			"name": "price",
+			"defaultValue": {
+				"from" : 499,
+				"to" : 14999
+			},
+			"params": [
+				{
+					"value": "from",
+					"label": "от"
+				}, {
+					"value": "to",
+					"label": "до"
+				}
+			]
+		}
+	]
+}
