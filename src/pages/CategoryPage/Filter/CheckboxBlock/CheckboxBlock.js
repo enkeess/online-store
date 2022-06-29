@@ -13,13 +13,14 @@ const CheckboxContainer = styled.div`
 	justify-content: flex-start;
 `
 
-const StyledCheckbox = ({control, name, data: {label, value}}) => {
+const StyledCheckbox = ({control, name, data: {label, value, id}}) => {
 	return(
 		<Controller
 			name={`${name}.${value}`}
 			control={control}
 			render={({ field }) => (
 				<FormControlLabel
+					{...field}
 					control={
 						<Checkbox 
 							checked={field.value ?? false} 
@@ -47,7 +48,7 @@ export const CheckboxBlock = ({control, params, name, defaultValue}) => {
 
 		<CheckboxContainer>
 			{params.map(data => (
-				<StyledCheckbox control={control} name={name} data={data}/>
+				<StyledCheckbox control={control} name={name} data={data} key={data.id}/>
 			))}
 		</CheckboxContainer>
 	)

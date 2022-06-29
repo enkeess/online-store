@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 import {Flex} from '@BaseComponents';
 
 
-const StyledRadio = ({data: {label, value}}) => {
+const StyledRadio = ({data: {label, value, id}}) => {
 	return(
 		<FormControlLabel
 			sx={{
@@ -20,7 +20,7 @@ const StyledRadio = ({data: {label, value}}) => {
 			}}
 			value={value} 
 			control={
-				<Radio 
+				<Radio
 					checkedIcon={<CheckBoxIcon color='info'/>}
 					icon={<CheckBoxOutlineBlankIcon color='info'/>}
 				/>
@@ -36,9 +36,7 @@ export const RadioBlock = ({control, params, name, defaultValue}) => {
 			<Controller
 				render={({ field }) => (
 					<RadioGroup aria-label="name" {...field}>
-						
-						{params.map(data => <StyledRadio data={data}/>)}
-
+						{params.map(data => <StyledRadio data={data} key={data.id}/>)}
 					</RadioGroup>
 				)}
 				name={name}

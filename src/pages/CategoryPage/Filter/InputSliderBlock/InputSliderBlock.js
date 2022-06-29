@@ -11,22 +11,24 @@ const InputSliderContainer = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	position: relative;
 	column-gap: 15px;
-	padding-top: 15px;	
+	padding-top: 0px;	
 `
 
-const InputSlider = ({name, data: {label, value}, defaultValue, control}) => {
+const InputSlider = ({name, data: {label, value, id}, defaultValue, control}) => {
   return (
 
 	<Controller
 		name={`${name}.${value}`}
 		control={control}
+		defaultValue={defaultValue[value]}
 		render={({ field }) => (
 			<TextField
+				{...field}
 				label={label}
-				defaultValue={defaultValue[value]}
 				size="small"
 				color='info'
-				onChange={(e) => field.onChange(e.target.value)} 
+				type='number'
+				onChange={(e) => field.onChange(+e.target.value)} 
 			/>
 		)}
 	/>						
@@ -37,7 +39,7 @@ export const InputSliderBlock = ({control, params, name, defaultValue}) => {
 	return(
 		<InputSliderContainer>
 			{params.map((data, i) => (
-				<InputSlider control={control} name={name} data={data} defaultValue={defaultValue}/>
+				<InputSlider control={control} name={name} data={data} defaultValue={defaultValue} key={data.id}/>
 			))}
 		</InputSliderContainer>
 	)

@@ -127,6 +127,12 @@ export const theme = createTheme({
 		fontSize: '25px',
 		lineHeight: '29px',
 		color: colors.textDark	
+	}, 
+	categoryListItem: {
+		fontWeight: 400,
+		fontSize: '20px',
+		lineHeight: '23px',
+		color: colors.textDark
 	}
   },
 });

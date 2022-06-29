@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -6,6 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Dots } from './Dots';
 import { StyledIconButton } from '@BaseComponents';
 import styled from '@emotion/styled';
+import { nanoid } from 'nanoid';
 
 
 const CarouselBase = styled.div`
@@ -26,7 +27,7 @@ const Content = styled.div`
 
 	left: 0;
 
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s;
 	transform: translateX(${props =>  - props.width * (props.activePage - 1)}px)
 `
 
@@ -77,22 +78,21 @@ export const Carousel = (props)  => {
 	const carouselRef = useRef(null);
 	const width = carouselRef.current?.clientWidth;
 
-	const getPages = () => {
+	const pages = useMemo(()=>{
 		let pages = [];
 
 		for(let i = 0; i < maxPage; i++) {
 			pages.push(content.slice(i * inViewbox, (i + 1) * inViewbox));
 		}
 
-		return pages.map(i => <Page width={width}>{i}</Page>);
-		
-	}
+		return pages.map(i => <Page width={width} key={nanoid()}>{i}</Page>);
+	}, [content])
 
 	return(
 		<CarouselBase ref={carouselRef}>
 			<Viewbox>
 				<Content width={width} activePage={activePage}>
-					{getPages()}
+					{pages}
 				</Content>
 			</Viewbox>
 

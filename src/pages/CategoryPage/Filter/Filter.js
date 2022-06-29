@@ -14,6 +14,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import { CheckboxBlock } from './CheckboxBlock';
 import { InputSliderBlock } from './InputSliderBlock';
 import { RadioBlock } from './RadioBlock/RadioBlock';
+import { nanoid } from 'nanoid';
 
 const StyledAccordion = styled(Accordion)`
 	background: none;
@@ -98,43 +99,64 @@ const FilterBlock = ({control, filter}) => {
 }
 	
 const FilterBase = styled.div`
-	grid-area: filter;
 	padding-top: 10px;
 	
 `
 
 export const Filter = ({filters}) => {
 
-	const { handleSubmit, control , reset, register } = useForm({
+	const { handleSubmit, control , reset, register, resetField, setValue } = useForm({
 		defaultValues: (function setDefault(){
 			let obj = {};
 
 			filters.forEach(filter => {
-				obj[filter.name] = filter.defaultValue
-			})
+				obj[filter.name] = {};
+				switch(filter.type) {
+					case 'checkboxBlock':
+						filter.params.forEach(({value}) => {
+							obj[filter.name][value] = false;
+						});
+						break;
+					default:
+						obj[filter.name] = filter.defaultValue;
+						break;
+				}
+			});
 
+			console.log(obj);
 			return obj;
 		})()
-		
 	});
 
 	const onSubmit = data =>  {
 		console.log(data);
 	} ;
 
+	const onReset = () => {
+		reset();
+	}
+
 	return(
-		<FilterBase>
+		
 			<form onSubmit={handleSubmit(onSubmit)}>
 				{
 					filters.map(filter => (
-						<FilterBlock control={control} filter={filter}/>
+						<FilterBlock control={control} filter={filter} key={filter.id}/>
 					))
 				}
 				<FormButton type='submit' fullWidth variant='contained' color='info' sx={{marginTop: '30px'}}>
-					Применить фильтры
+					<Typography variant='btn'>
+						Применить фильтры
+					</Typography>
+				</FormButton>
+
+				<FormButton  fullWidth variant='contained' color='error' sx={{marginTop: '10px'}} onClick={onReset}>
+					<Typography variant='btn'>
+						Сбросить фильтры
+					</Typography>
 				</FormButton>
 			</form> 
-		</FilterBase>
+		
 	)
 }
 
