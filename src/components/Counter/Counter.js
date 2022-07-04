@@ -7,8 +7,9 @@ import AddIcon from '@mui/icons-material/Add';
 
 import { colors } from '@Utils';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-
+import { incItem, decItem } from '@/redux/cart/slice';
 
 const CounterIconButton = styled(Button)`
 	height: 30px;
@@ -20,28 +21,31 @@ const CounterIconButton = styled(Button)`
 `
 
 
-export const Counter = () => {
-	const [count, setCount] = useState(1);
-	const changeCount = (value) => {
-		setCount(prev => prev + value);
-	}
+export const Counter = ({id}) => {
+
+	const dispatch = useDispatch();
+
+	const card = useSelector(state => state.cart.items.find((obj) => obj.id === id))
+
+	const incToCart = () => dispatch(incItem(card));
+	const decFromCart = () => dispatch(decItem(card.id));
 
 	return(
 		<Flex cgap='20px'>
 			<CounterIconButton 
-				onClick={() => changeCount(-1)}
+				onClick={decFromCart}
 				variant='outlined'
 			>
 				<RemoveIcon/>
 			</CounterIconButton>
 
 			<Typography variant='counter' color={colors.textDark}>
-				{count}
+				{card.count}
 			</Typography>
 			
 
 			<CounterIconButton 
-				onClick={() => changeCount(1)} 
+				onClick={incToCart} 
 				variant='outlined'
 			>
 				<AddIcon/>

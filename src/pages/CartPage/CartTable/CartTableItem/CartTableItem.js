@@ -1,25 +1,19 @@
 
 import {Flex, StyledIconButton} from "@BaseComponents";
-
 import { Counter } from '@Components';
-
 import {Typography} from "@mui/material";
-
 import CloseIcon from '@mui/icons-material/Close';
-
-
-import src from '@/img/img_1.png';
 import { colors} from '@Utils';
 
 import { CartTableItemBase, CartTableItemName, CartTableItemPrice } from '../CartTableItemBase';
 
-export const CartTableItem = (props) => {
+import { removeItem } from '@/redux/cart/slice';
+import { useDispatch } from 'react-redux';
 
-	const name = 'Кружка PrioritY "Paw Patrol / Щенячий патруль"...';
-	const code = 'Код товара: 2398643Р';
-	const price = '2500 р.';
-	const alt = 'alt';
-
+export const CartTableItem = ({label, price, count, id, src, alt}) => {
+	const dispatch = useDispatch();
+	const removeFromCart = () => dispatch(removeItem(id));
+	
 	return(
 		<CartTableItemBase>
 			<CartTableItemName>
@@ -29,28 +23,28 @@ export const CartTableItem = (props) => {
 
 				<Flex align={'flex-start'} dir={'column'} justify={'center'} rgap={'10px'}>
 					<Typography variant='h3'>
-						{name}
+						{label}
 					</Typography>
 
 					<Typography variant='p'>
-						{code}
+						Код товара: {id}
 					</Typography>
 				</Flex>
 			</CartTableItemName>
 
 			<Flex>
-				<Counter/>
+				<Counter id={id}/>
 			</Flex>
 
 			<CartTableItemPrice>
 				<Typography variant='tablePrice' color={colors.footer}>
-					{price}
+					{price * count} p.
 				</Typography>
 				
 			</CartTableItemPrice>
 
 			<Flex>
-				<StyledIconButton variant={'contained'} color='infoLight'>
+				<StyledIconButton variant={'contained'} color='infoLight' onClick={removeFromCart}>
 					<CloseIcon color='info'/>
 				</StyledIconButton>
 			</Flex>

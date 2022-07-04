@@ -4,10 +4,12 @@ import {Container, Section, SectionTitle, Flex,  UnderlidedTypography, StyledBut
 import {Typography} from "@mui/material";
 
 import { colors, routes } from '@Utils';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CartTable } from './CartTable';
 
 export const CartPage = () => {
+	const total = useSelector(state => state.cart.totalPrice);
 	return(
 		<Container>
 			<Section>
@@ -24,7 +26,7 @@ export const CartPage = () => {
 						</Typography>
 
 						<Typography color='error' variant='totalPrice'>
-							5000 p.
+							{total} p.
 						</Typography>
 					</Flex>
 

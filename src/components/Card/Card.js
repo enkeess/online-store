@@ -1,8 +1,6 @@
 
 import styled from '@emotion/styled';
 
-// import src from '@/img/img_1.png';
-
 import { Checkbox, Avatar, Rating, Typography } from "@mui/material";
 
 import { StyledButton } from '@BaseComponents';
@@ -15,6 +13,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import StarIcon from '@mui/icons-material/Star';
 
+import { incItem } from '@/redux/cart/slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { Counter } from '../Counter';
 
 const CardBase = styled.div`
 	height: 550px;
@@ -105,11 +106,29 @@ const Price = styled.span`
 	color: ${colors.textDark};
 `
 
+
+const CounterContainer = styled.div`
+	height: 55px;
+	align-items: center;
+	display: grid;
+	justify-content: flex-start;
+	column-gap: 20px;
+	grid-template-columns: 1fr auto;
+`
+
 export const Card = ({data}) => {
 
-	console.log(data);
+	const dispatch = useDispatch();
+
+	const addToCart = () => {
+		dispatch(incItem(data));
+	};
 
 	const {id, label, rating, src, alt, price, oldPrice, rest} = data;
+
+	const card = useSelector(state => state.cart.items.find((obj) => obj.id === id))
+
+	
 
 	return(
 		<CardBase>
@@ -158,11 +177,23 @@ export const Card = ({data}) => {
 				</Price>
 			</Block>
 
-			<StyledButton variant='contained' color='success' fullWidth>
-				<Typography color={colors.light} variant='btn'>
-					Добавить в корзину
-				</Typography>
-			</StyledButton>
+			{card ?
+				<CounterContainer>
+					<Typography variant='h3'>
+						В корзине: 
+					</Typography>
+					<Counter id={id}/>
+				</CounterContainer>
+				
+				:
+				<StyledButton variant='contained' color='success' fullWidth onClick={addToCart}>
+					<Typography color={colors.light} variant='btn'>
+						Добавить в корзину
+					</Typography>
+				</StyledButton>
+			}
+
+			
 		</CardBase>
 	)
 }

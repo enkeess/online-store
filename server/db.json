@@ -219,7 +219,7 @@
 			"price": 2500,
 			"oldPrice": null,
 			"isHot": true,
-			"src": "img/img_1.png",
+			"src": "http://localhost:3000/img/img_1.png",
 			"alt": "Набор наклеек-тату переводных",
 			"rest": 15,
 			"category": [
@@ -236,9 +236,9 @@
 			"price": 2500,
 			"oldPrice": 3600,
 			"isHot": true,
-			"src": "img/img_2.png",
+			"src": "http://localhost:3000/img/img_2.png",
 			"alt": "Кружка Щенячий патруль",
-			"rest": 15,
+			"rest": 10,
 			"category": [
 				"tovary_dlya_prazdnika"
 			],
@@ -253,7 +253,7 @@
 			"price": 2500,
 			"oldPrice": null,
 			"isHot": true,
-			"src": "img/img_3.png",
+			"src": "http://localhost:3000/img/img_3.png",
 			"alt": "Набор детской посуды Три Кота",
 			"rest": 15,
 			"category": [
@@ -270,9 +270,9 @@
 			"price": 2500,
 			"oldPrice": 4500,
 			"isHot": true,
-			"src": "img/img_4.png",
+			"src": "http://localhost:3000/img/img_4.png",
 			"alt": "Кружка Гравити Фолз",
-			"rest": 15,
+			"rest": 3,
 			"category": [
 				"tovary_dlya_prazdnika"
 			],

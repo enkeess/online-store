@@ -1,29 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Badge} from '@mui/material';
-import { nanoid } from 'nanoid';
 
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined';
 
 import styled from '@emotion/styled';
-import { useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const iconsData = [ {
-		to: '/profile',
-		Icon: PersonOutlineOutlinedIcon
-	}, {
-		to: '/favour',
-		Icon: StarBorderPurple500OutlinedIcon 
-	}, {
-		to: '/cart',
-		Icon: ShoppingCartOutlinedIcon
-	}, {
-		to: '/liked',
-		Icon: FavoriteBorderOutlinedIcon
-	}
-]
 
 const IconsBlockBase = styled.ul`
 	display: inline-flex;
@@ -41,23 +26,46 @@ const IconsBlockItem = styled.li`
 
 
 export const IconsBlock = ({color = "primary", textColor = 'white', iconColor = 'dark'}) => {
-	const [value, setValue] = useState([2,2,2,2]);
-	const icons = useMemo(() => 
-		iconsData.map(({to, Icon}, i) => 
-
-			<IconsBlockItem key={nanoid()}>
-				<Link to={to}>
-					<Badge badgeContent={value[i]} color={color} sx={{color: textColor}}>
-						<Icon color={iconColor}/>
+	const cartCount = useSelector(state => state.cart.totalCount);
+	return(
+		<IconsBlockBase>
+			{/* Profile */}
+			<IconsBlockItem>
+				<Link to={'/profile'}>
+					<Badge badgeContent={2} color={color} sx={{color: textColor}}>
+						<PersonOutlineOutlinedIcon color={iconColor}/>
 					</Badge>
 				</Link>
 			</IconsBlockItem>
-		)
-	, [value])
 
-	return(
-		<IconsBlockBase>
-			{icons}
+			{/* Favour */}
+			<IconsBlockItem>
+				<Link to={'/favour'}>
+					<Badge badgeContent={2} color={color} sx={{color: textColor}}>
+						<StarBorderPurple500OutlinedIcon color={iconColor}/>
+					</Badge>
+				</Link>
+			</IconsBlockItem>
+
+			{/* Cart */}
+
+			<IconsBlockItem>
+				<Link to={'/cart'}>
+					<Badge badgeContent={cartCount} color={color} sx={{color: textColor}}>
+						<ShoppingCartOutlinedIcon color={iconColor}/>
+					</Badge>
+				</Link>
+			</IconsBlockItem>
+
+			{/* Liked */}
+
+			<IconsBlockItem>
+				<Link to={'/liked'}>
+					<Badge badgeContent={2} color={color} sx={{color: textColor}}>
+						<FavoriteBorderOutlinedIcon color={iconColor}/>
+					</Badge>
+				</Link>
+			</IconsBlockItem>
 		</IconsBlockBase>
 	);
 };

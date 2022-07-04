@@ -6,12 +6,18 @@ import { ErrorBoundry } from '@BaseComponents';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '@Utils';
+import { Provider } from 'react-redux';
+
+import { store } from './redux/store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
 	// <React.StrictMode>
+	<Provider store={store}>
+
+	
 		<ThemeProvider theme={theme}>
 			<ErrorBoundry>
 				<Router>
@@ -19,6 +25,7 @@ root.render(
 				</Router>
 			</ErrorBoundry>
 		</ThemeProvider>
+	</Provider>
 	// </React.StrictMode>
 );
 
