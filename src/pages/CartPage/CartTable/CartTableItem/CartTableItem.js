@@ -7,7 +7,7 @@ import { colors} from '@Utils';
 
 import { CartTableItemBase, CartTableItemName, CartTableItemPrice } from '../CartTableItemBase';
 
-import { removeItem } from '@/redux/cart/slice';
+import { removeItem } from '@/redux/cart/cartSlice';
 import { useDispatch } from 'react-redux';
 
 export const CartTableItem = ({label, price, count, id, src, alt}) => {

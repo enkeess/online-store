@@ -6,6 +6,9 @@ import { colors } from '@Utils'
 import { Container, Flex, UnderlidedTypography, Section, SectionTitle } from '@BaseComponents'
 import { RegistrationForm } from './RegistrationForm';
 
+
+
+
 const RegistrationPageContainer = styled(Container)`
 	margin: 0 auto;
 	width: 615px;
@@ -31,5 +34,5 @@ export const RegistrationPage = () => {
 				</Flex>			
 			</Section>
 		</RegistrationPageContainer>
-	);
-};
+	)
+}	

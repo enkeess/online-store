@@ -4,21 +4,46 @@ import { Controller, useForm, useFormState } from 'react-hook-form';
 import { Form, FormButton, PasswordInput } from '@Components';
 import { loginValidation, passwordValidation } from './validation';
 
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { setUser } from '@/redux/user/userSlice';
+
 export const LoginForm = (props) => {
 	const { handleSubmit, control , reset } = useForm();
-
+	const dispatch = useDispatch();
 	const { errors } = useFormState({ 
         control
     })
 
-	const onSubmit = data =>  {
-		console.log(data); 
+	const auth = getAuth();
+
+	const onSubmit = ({email, password}) =>  {
+		
+		signInWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				// Signed in 
+				const user = userCredential.user;
+
+				console.log(user);
+
+				dispatch(setUser({
+					email: user.email,
+					id: user.uid,
+					name: user.displayName,
+					token: user.accessToken
+				}))
+				// ...
+			})
+			.catch((error) => {
+				alert(error.message);
+			})
 	} ;
 
 	return(
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<Controller
-				name="login"
+				name="email"
+				defaultValue={''}
 				control={control}
 				rules={loginValidation}
 				render={({ field }) => 
@@ -28,14 +53,15 @@ export const LoginForm = (props) => {
               			value={field.value}
 						fullWidth 
 						color='success'
-						error={!!errors.login?.message}
-                        helperText={ errors?.login?.message }
+						error={!!errors.email?.message}
+                        helperText={ errors?.email?.message }
 					/>
 				}
 			/>
 
 			<Controller
 				name="password"
+				defaultValue={''}
 				control={control}
 				rules={passwordValidation}
 				render={({ field }) => 

@@ -13,7 +13,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import StarIcon from '@mui/icons-material/Star';
 
-import { incItem } from '@/redux/cart/slice';
+import { incItem } from '@/redux/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Counter } from '../Counter';
 

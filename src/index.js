@@ -8,6 +8,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '@Utils';
 import { Provider } from 'react-redux';
 
+import './firebase';
+
 import { store } from './redux/store';
 
 const container = document.getElementById('root');

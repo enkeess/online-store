@@ -9,7 +9,7 @@ import { colors } from '@Utils';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { incItem, decItem } from '@/redux/cart/slice';
+import { incItem, decItem } from '@/redux/cart/cartSlice';
 
 const CounterIconButton = styled(Button)`
 	height: 30px;

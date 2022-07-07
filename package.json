@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.5",
     "@reduxjs/toolkit": "^1.8.2",
+    "firebase": "^9.8.4",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,7 +19,7 @@
     "react-router-dom": "^6.3.0"
   },
   "scripts": {
-	"dev" : "concurrently \"npm run server\" \"npm start\"", 
+    "dev": "concurrently \"npm run server\" \"npm start\"",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",

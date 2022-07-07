@@ -1,5 +1,3 @@
-import { RootState } from '../store';
-
 export const selectCart = (state) => state.cart;
 
 export const selectCartItemById = (id) => (state) =>
